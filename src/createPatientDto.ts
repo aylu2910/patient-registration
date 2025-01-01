@@ -20,8 +20,8 @@ export class CreatePatientDto {
   readonly address: string;
 
   @IsNotEmpty()
-  @IsPhoneNumber('any')
-  readonly phoneNumber: number;
+  @IsPhoneNumber()
+  readonly phoneNumber: string;
 
   @IsNotEmpty()
   @IsUrl()
