@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { PatientModule } from './modules/patient.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: 'testuser123',
       synchronize: true,
     }),
+    PatientModule,
   ],
   controllers: [AppController],
   providers: [AppService],
