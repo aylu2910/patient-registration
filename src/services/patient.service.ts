@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 export class PatientService {
   constructor(
     @InjectRepository(Patient)
-    private patientRepository: Repository<Patient>,
+    private readonly patientRepository: Repository<Patient>,
   ) {}
   create(createPatientDto: CreatePatientDto) {
     console.log(`This action adds a new patient`);
