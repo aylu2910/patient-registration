@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreatePatientDto } from './dto/create-patient.dto';
-import { UpdatePatientDto } from './dto/update-patient.dto';
+import { CreatePatientDto } from '../dtos/create-patient.dto';
+import { UpdatePatientDto } from '../dtos/update-patient.dto';
 
 @Injectable()
 export class PatientService {

@@ -1,7 +1,22 @@
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity()
 export class Patient {
-  readonly name: string;
-  readonly email: string;
-  readonly address: string;
-  readonly phoneNumber: string;
-  readonly imageDocument: string;
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  name: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  address: string;
+
+  @Column()
+  phoneNumber: string;
+
+  @Column()
+  imageDocument: string;
 }

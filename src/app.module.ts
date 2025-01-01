@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PatientModule } from './modules/patient.module';
+import { Patient } from './entities/patient.entity';
 
 @Module({
   imports: [
@@ -11,7 +12,7 @@ import { PatientModule } from './modules/patient.module';
       host: 'mysql_db',
       port: 3307,
       database: 'patients',
-      entities: [],
+      entities: [Patient],
       username: 'testuser',
       password: 'testuser123',
       synchronize: true,
