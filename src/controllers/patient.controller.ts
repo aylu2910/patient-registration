@@ -12,9 +12,14 @@ import {
 import { PatientService } from '../services/patient.service';
 import { CreatePatientDto } from '../dtos/create-patient.dto';
 import { UpdatePatientDto } from '../dtos/update-patient.dto';
+import { NotificationContext } from '../notifications/notification.context';
+import { EmailNotificationStrategy } from '../notifications/strategy/impl/email-notification.strategy';
 
 @Controller('patients')
 export class PatientController {
+  emailStrategy = new EmailNotificationStrategy();
+  context = new NotificationContext(this.emailStrategy);
+
   constructor(private readonly patientService: PatientService) {}
 
   @Post()
@@ -22,6 +27,12 @@ export class PatientController {
     try {
       const result = await this.patientService.create(createPatientDto);
       //check if status is 201
+      if (result) {
+        await this.context.executeNotification(
+          'ayluOre',
+          'testing email strategy',
+        );
+      }
       return { message: 'Patient registered successfully', data: result };
     } catch (error) {
       throw new HttpException(
