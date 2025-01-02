@@ -11,27 +11,27 @@ export class PatientService {
     @InjectRepository(Patient)
     private readonly patientRepository: Repository<Patient>,
   ) {}
-  create(createPatientDto: CreatePatientDto) {
+  async create(createPatientDto: CreatePatientDto) {
     console.log(`This action adds a new patient`);
     return this.patientRepository.save(createPatientDto);
   }
 
-  findAll() {
+  async findAll() {
     console.log(`This action returns all patient`);
     return this.patientRepository.find();
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
     console.log(`This action returns a #${id} patient`);
     return this.patientRepository.findOneBy({ id });
   }
 
-  update(id: number, updatePatientDto: UpdatePatientDto) {
+  async update(id: number, updatePatientDto: UpdatePatientDto) {
     console.log(`This action updates a #${id} patient`);
     return this.patientRepository.update(id, updatePatientDto);
   }
 
-  remove(id: number) {
+  async remove(id: number) {
     console.log(`This action removes a #${id} patient`);
     return this.patientRepository.delete(id);
   }
