@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpException,
+  HttpStatus,
 } from '@nestjs/common';
 import { PatientService } from '../services/patient.service';
 import { CreatePatientDto } from '../dtos/create-patient.dto';
@@ -16,27 +18,43 @@ export class PatientController {
   constructor(private readonly patientService: PatientService) {}
 
   @Post()
-  create(@Body() createPatientDto: CreatePatientDto) {
-    return this.patientService.create(createPatientDto);
+  async create(@Body() createPatientDto: CreatePatientDto) {
+    try {
+      const result = await this.patientService.create(createPatientDto);
+      //check if status is 201
+      return { message: 'Patient registered successfully', data: result };
+    } catch (error) {
+      throw new HttpException(
+        { message: 'Failed to register patient', error: error.message },
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
   @Get()
-  findAll() {
-    return this.patientService.findAll();
+  async findAll() {
+    return await this.patientService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.patientService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    const patient = await this.patientService.findOne(+id);
+    if (!patient) {
+      throw new HttpException('Patient not found', HttpStatus.NOT_FOUND);
+    }
+    return patient;
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePatientDto: UpdatePatientDto) {
-    return this.patientService.update(+id, updatePatientDto);
+  async update(
+    @Param('id') id: string,
+    @Body() updatePatientDto: UpdatePatientDto,
+  ) {
+    return await this.patientService.update(+id, updatePatientDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.patientService.remove(+id);
+  async remove(@Param('id') id: string) {
+    return await this.patientService.remove(+id);
   }
 }
