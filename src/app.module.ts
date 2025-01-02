@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PatientModule } from './modules/patient.module';
-import { Patient } from './entities/patient.entity';
+import { PatientModule } from './patient/modules/patient.module';
+import { Patient } from './patient/entities/patient.entity';
 
 @Module({
   imports: [
