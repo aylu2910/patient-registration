@@ -70,7 +70,6 @@ describe('PatientController', () => {
         data: result,
       });
       expect(mockPatientService.create).toHaveBeenCalledWith(createPatientDto);
-
     });
   });
 });
