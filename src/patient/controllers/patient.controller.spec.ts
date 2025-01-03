@@ -69,10 +69,10 @@ describe('PatientController', () => {
         message: 'Patient registered successfully',
         data: result,
       });
-      //expect(mockPatientService.create).toHaveBeenCalledWith(createPatientDto);
-      // expect(mockNotificationContext.executeNotification).toHaveBeenCalledWith(
-      //   'no-reply-recipient@hotmail.com',
-      // );
+      expect(mockPatientService.create).toHaveBeenCalledWith(createPatientDto);
+      expect(mockNotificationContext.executeNotification).toHaveBeenCalledWith(
+        'no-reply-recipient@hotmail.com',
+      );
     });
   });
 });
