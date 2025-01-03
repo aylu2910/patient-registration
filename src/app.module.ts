@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PatientModule } from './patient/modules/patient.module';
 import { Patient } from './patient/entities/patient.entity';
+import { MailerModule } from './mailer/mailer.module';
 
 @Module({
   imports: [
@@ -17,7 +19,9 @@ import { Patient } from './patient/entities/patient.entity';
       password: 'testuser123',
       synchronize: true,
     }),
+    ConfigModule.forRoot(),
     PatientModule,
+    MailerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
