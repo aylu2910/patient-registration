@@ -89,19 +89,17 @@ describe('PatientController', () => {
         imageDocument: 'https://aws.asldjfhasdu44l.com.ar',
       };
       const errorResponse = {
-        message: ['email must be an email'],
-        error: 'Bad Request',
+        message: 'Failed to register patient',
+        error: 'Http Exception',
       };
-
-      mockPatientService.create.mockImplementation(() => {
-        throw new HttpException(errorResponse, HttpStatus.BAD_REQUEST);
-      });
 
       try {
         await controller.create(createPatientDtoError);
       } catch (error) {
         expect(error).toBeInstanceOf(HttpException);
         expect(error.getStatus()).toBe(HttpStatus.INTERNAL_SERVER_ERROR);
+        expect(error.getResponse().error).toEqual(errorResponse.error);
+        expect(error.getResponse().message).toEqual(errorResponse.message);
       }
     });
   });
