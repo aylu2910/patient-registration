@@ -27,7 +27,7 @@ export class MailerService {
     const transporter = this.mailTransport();
     const emailDto: SendEmailDto = {
       recipient: recipient,
-      subject: 'Welcome aboad! :)',
+      subject: 'Welcome aboard! :)',
       html: `<h1>Thank you so much for registering as our patient.</h1><p>This is just the start of the journey</p>`,
     };
 
