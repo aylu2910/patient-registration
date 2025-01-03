@@ -97,3 +97,54 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+⚡ Quick Start
+The easiest way to get started is to visit our website, where you can customize and preview your card live.
+https://github-readme-tech-stack.vercel.app
+
+❓ Why?
+As a developer, it's important to showcase your expertise in different technologies to potential collaborators and employers. With github-readme-tech-stack, you can easily create a visual representation of the technologies used in your GitHub repository and include it in your profile README. This can help you stand out and attract the attention of others who are looking for developers with specific skill sets.
+
+The images are fully customizable, so you can choose the technologies you want to showcase and even adjust the colors, icons, and the alignment to match your personal brand.
+
+Personally, I've always wanted to show off my skills in a clean and modern way. I could do that with just the badges, but they didn't match the style of github-readme-streak-stats and github-readme-stats. With github-readme-tech-stack, that's no longer a problem, it naturally matches those cards!
+
+👉 Features
+Easy to use: Creating a Tech Stack image is as simple as adding a markdown tag to your profile README.
+Demo website: github-readme-tech-stack has a demo website, where you can build your own card with no effort.
+Customizable: Choose the technologies you want to showcase and customize the colors and icons to match your personal brand.
+Custom icons: You can even upload and use your own svg icons if they don't already exist.
+Multiple themes: These cards come with several pre-made themes that you can use. However, if none of the themes suits your style, you can easily create your own!
+Badges: github-readme-tech-stack uses shields.io badges and simple-icons under the hood.
+Style: github-readme-tech-stack is designed to match the style of github-readme-streak-stats, github-readme-stats and many other cool tools.
+🔧 Query parameters
+None of the fields are required. Each query parameter has a default value, which is listed below.
+
+What are the available query params?
+🪁 Themes
+These cards come with several built-in themes that you can use. You can find them all by clicking here.
+You can also customize the themes. It's easier to do with the demo website.
+
+⚒️ Building from source
+
+# Clone the project:
+
+git clone https://github.com/0l1v3rr/github-readme-tech-stack.git
+cd github-readme-tech-stack
+
+# Install the dependencies:
+
+npm i
+npm run prepare
+
+# Running the application:
+
+npm run dev
+
+# Running the storybook:
+
+npm run storybook
+🧑‍🤝‍🧑 Contributing
+All contributions are welcome.
+You can find a contributing guideline here.
+This project is released under the MIT License.
