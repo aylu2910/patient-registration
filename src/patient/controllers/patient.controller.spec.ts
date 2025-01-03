@@ -3,6 +3,8 @@ import { PatientController } from './patient.controller';
 import { PatientService } from '../services/patient.service';
 import { EmailNotificationStrategy } from '../../notifications/strategy/impl/email-notification.strategy';
 import { NotificationContext } from '../../notifications/notification.context';
+import { HttpStatus } from '@nestjs/common/enums/http-status.enum';
+import { HttpException } from '@nestjs/common';
 
 describe('PatientController', () => {
   let controller: PatientController;
@@ -55,6 +57,10 @@ describe('PatientController', () => {
     service = module.get<PatientService>(PatientService);
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
@@ -70,6 +76,35 @@ describe('PatientController', () => {
         data: result,
       });
       expect(mockPatientService.create).toHaveBeenCalledWith(createPatientDto);
+    });
+  });
+
+  describe('create - valid input', () => {
+    it('should return error message when creating a patient with no valid values', async () => {
+      const createPatientDtoError = {
+        name: 'John oa',
+        email: 'no-thotmail.com',
+        address: 'Avenida Siempre Viva 742',
+        phoneNumber: '+541166566143',
+        imageDocument: 'https://aws.asldjfhasdu44l.com.ar',
+      };
+      const errorResponse = {
+        statusCode: HttpStatus.BAD_REQUEST,
+        message: ['email must be an email'],
+        error: 'Bad Request',
+      };
+
+      mockPatientService.create.mockImplementation(() => {
+        throw new HttpException(errorResponse, HttpStatus.BAD_REQUEST);
+      });
+
+      try {
+        await controller.create(createPatientDtoError);
+      } catch (error) {
+        expect(error).toBeInstanceOf(HttpException);
+        expect(error.getStatus()).toBe(HttpStatus.BAD_REQUEST);
+        expect(error.getResponse()).toEqual(errorResponse);
+      }
     });
   });
 });

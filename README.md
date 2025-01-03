@@ -1,24 +1,12 @@
 <div align= "center">
-
-⭐ **If you like this project, please star the repository!** ⭐ <br>
-------- 👇 **Template Demo Below** 👇 --------
-
 <hr>
 </div>
 
 <div align="center">
-<a href="https://github.com/Sumonta056/FixHub-Issue-Tracker-Website" target="blank">
-<img src="./assets/chatBot.png" width="90" alt="Logo" />
-</a>
 
-<h2> Project Name : Readme Template </h2>
+<h2> Light-it Challenge ⚡  Patient registration</h2>
 
 ![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-
-
-
-
-<img src ="./assets/bg-3.webp" width="80%">
 
 </div>
 
