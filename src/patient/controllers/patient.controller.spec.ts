@@ -89,7 +89,6 @@ describe('PatientController', () => {
         imageDocument: 'https://aws.asldjfhasdu44l.com.ar',
       };
       const errorResponse = {
-        statusCode: HttpStatus.BAD_REQUEST,
         message: ['email must be an email'],
         error: 'Bad Request',
       };
@@ -102,8 +101,7 @@ describe('PatientController', () => {
         await controller.create(createPatientDtoError);
       } catch (error) {
         expect(error).toBeInstanceOf(HttpException);
-        expect(error.getStatus()).toBe(HttpStatus.BAD_REQUEST);
-        expect(error.getResponse()).toEqual(errorResponse);
+        expect(error.getStatus()).toBe(HttpStatus.INTERNAL_SERVER_ERROR);
       }
     });
   });

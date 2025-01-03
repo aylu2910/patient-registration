@@ -32,7 +32,6 @@ export class PatientController {
       const result = await this.patientService.create(createPatientDto);
 
       if (result) {
-        // Execute the notification in the background without awaiting
         this.context
           .executeNotification(createPatientDto.email)
           .catch((error) => {
