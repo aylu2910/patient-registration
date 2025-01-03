@@ -21,7 +21,7 @@ An API for patient registration that collects the following information: name, e
 - **📬 Notification e-mail:** nodemailer. Send automatic email once registered with option to scale to other types of notification using Design Patterns.
 - **📄 API Documentation:** Swagger.
 
-### 📃 API Documentation
+## 📃 API Documentation
 
 The API documentation for this application is available at [http://localhost:3000/api/docs](http://localhost:3000/api). It details all endpoints and their usage.
 
