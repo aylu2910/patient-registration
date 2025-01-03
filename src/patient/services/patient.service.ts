@@ -4,35 +4,34 @@ import { UpdatePatientDto } from '../dto/update-patient.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Patient } from '../entities/patient.entity';
 import { Repository } from 'typeorm';
+import { EmailNotificationStrategy } from 'src/notifications/strategy/impl/email-notification.strategy';
 
 @Injectable()
 export class PatientService {
   constructor(
     @InjectRepository(Patient)
     private readonly patientRepository: Repository<Patient>,
+    private readonly emailNotificationStrategy: EmailNotificationStrategy,
   ) {}
   async create(createPatientDto: CreatePatientDto) {
-    console.log(`This action adds a new patient`);
-    return this.patientRepository.save(createPatientDto);
+    const patient = await this.patientRepository.save(createPatientDto);
+    await this.emailNotificationStrategy.notify(createPatientDto.email);
+    return patient;
   }
 
   async findAll() {
-    console.log(`This action returns all patient`);
     return this.patientRepository.find();
   }
 
   async findOne(id: number) {
-    console.log(`This action returns a #${id} patient`);
     return this.patientRepository.findOneBy({ id });
   }
 
   async update(id: number, updatePatientDto: UpdatePatientDto) {
-    console.log(`This action updates a #${id} patient`);
     return this.patientRepository.update(id, updatePatientDto);
   }
 
   async remove(id: number) {
-    console.log(`This action removes a #${id} patient`);
     return this.patientRepository.delete(id);
   }
 }

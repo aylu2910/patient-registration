@@ -12,27 +12,22 @@ export class PatientService {
     private readonly patientRepository: Repository<Patient>,
   ) {}
   async create(createPatientDto: CreatePatientDto) {
-    console.log(`This action adds a new patient`);
     return this.patientRepository.save(createPatientDto);
   }
 
   async findAll() {
-    console.log(`This action returns all patient`);
     return this.patientRepository.find();
   }
 
   async findOne(id: number) {
-    console.log(`This action returns a #${id} patient`);
     return this.patientRepository.findOneBy({ id });
   }
 
   async update(id: number, updatePatientDto: UpdatePatientDto) {
-    console.log(`This action updates a #${id} patient`);
     return this.patientRepository.update(id, updatePatientDto);
   }
 
   async remove(id: number) {
-    console.log(`This action removes a #${id} patient`);
     return this.patientRepository.delete(id);
   }
 }

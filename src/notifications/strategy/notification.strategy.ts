@@ -1,3 +1,3 @@
 export interface NotificationStrategy {
-  notify(recipient: string, message: string): Promise<void>;
+  notify(recipient: string): Promise<void>;
 }

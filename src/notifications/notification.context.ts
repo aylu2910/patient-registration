@@ -11,7 +11,7 @@ export class NotificationContext {
     this.strategy = strategy;
   }
 
-  async executeNotification(recipient: string, message: string): Promise<void> {
-    await this.strategy.notify(recipient, message);
+  async executeNotification(recipient: string): Promise<void> {
+    await this.strategy.notify(recipient);
   }
 }
