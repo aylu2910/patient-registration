@@ -1,150 +1,153 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<div align= "center">
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+⭐ **If you like this project, please star the repository!** ⭐ <br>
+------- 👇 **Template Demo Below** 👇 --------
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<hr>
+</div>
 
-## Description
+<div align="center">
+<a href="https://github.com/Sumonta056/FixHub-Issue-Tracker-Website" target="blank">
+<img src="./assets/chatBot.png" width="90" alt="Logo" />
+</a>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<h2> Project Name : Readme Template </h2>
 
-## Project setup
+![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-```bash
-$ npm install
-```
 
-## Compile and run the project
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
+<img src ="./assets/bg-3.webp" width="80%">
 
-# production mode
-$ npm run start:prod
-```
+</div>
 
-## Run tests
+## 💡 Overview
 
-```bash
-# unit tests
-$ npm run test
+FixHub is a powerful and intuitive issue tracker built using Next.js and SQL, designed to streamline bug management and project tracking. With a focus on efficiency and user-friendliness, FixHub allows for seamless creation, viewing, updating, and deletion of issues. Key features include:
 
-# e2e tests
-$ npm run test:e2e
+## ✨ Features
 
-# test coverage
-$ npm run test:cov
-```
+- **🔐 User Authentication:** Secure login with personalized access levels.
+- **🌍 Issue Management:** Create, view, update, and delete issues; assign tasks to team members.
+- **🔍 Filtering & Sorting:** Advanced options to quickly find and prioritize tasks.
+- **📄 Pagination & Analytics:** Navigate large lists and gain insights with charts and dashboards.
+- **🎯 Production Optimization:** Built for speed and reliability in production environments.
+- **🔧 Customization:** Tailor settings and configurations to your needs.
+- **📱 Responsive Design:** Access on any device with adaptive design.
 
-## Deployment
+Whether you're a solo developer or part of a large team, FixHub is the perfect tool for tracking and resolving issues with ease.🐞
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## 👩‍💻 Tech Stack
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+- **Next.js**: A React framework for building server-side rendering and static web applications.
+- **Auth.js**: Free and open source Authentication for the Web.
+- **Hono**: A lightweight web framework for building server-side applications with TypeScript.
+- **Drizzle ORM**: TypeScript-first ORM for type-safe database access.
+- **React Query**: Data-fetching library for managing server-state in React applications.
+- **Npm Package**: A fast JavaScript runtime that includes a package manager, task runner, and more.
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+## 📖 Sources and external API's
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- [NASA](https://www.nasa.gov) for space exploration and research
+- [National Geographic](https://www.nationalgeographic.com) for nature and science articles
+- [Stack Overflow](https://stackoverflow.com) for programming questions and answers
+- [Wikipedia](https://www.wikipedia.org) for a wide range of information on various topics
 
-## Resources
+## 📦 Getting Started
 
-Check out a few resources that may come in handy when working with NestJS:
+To get a local copy of this project up and running, follow these steps.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### 🚀 Prerequisites
 
-## Support
+- **Node.js** (v16.x or higher) and **npm** or **yarn**.
+- **Npm** If you prefer using npm for package management and running scripts.
+- **PostgreSQL** (or another supported SQL database).
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## 🛠️ Installation
 
-## Stay in touch
+1. **Clone the repository:**
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+   ```bash
+   git clone https://github.com/sumonta056/readme-template.git
+   cd readme-template
+   ```
 
-## License
+2. **Install dependencies:**
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+   Using Npm:
 
-⚡ Quick Start
-The easiest way to get started is to visit our website, where you can customize and preview your card live.
-https://github-readme-tech-stack.vercel.app
+   ```bash
+   npm install
+   ```
 
-❓ Why?
-As a developer, it's important to showcase your expertise in different technologies to potential collaborators and employers. With github-readme-tech-stack, you can easily create a visual representation of the technologies used in your GitHub repository and include it in your profile README. This can help you stand out and attract the attention of others who are looking for developers with specific skill sets.
+3. **Set up environment variables:**
 
-The images are fully customizable, so you can choose the technologies you want to showcase and even adjust the colors, icons, and the alignment to match your personal brand.
+   Create a `.env` file in the root directory and add the following variables:
 
-Personally, I've always wanted to show off my skills in a clean and modern way. I could do that with just the badges, but they didn't match the style of github-readme-streak-stats and github-readme-stats. With github-readme-tech-stack, that's no longer a problem, it naturally matches those cards!
+   ```env
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
 
-👉 Features
-Easy to use: Creating a Tech Stack image is as simple as adding a markdown tag to your profile README.
-Demo website: github-readme-tech-stack has a demo website, where you can build your own card with no effort.
-Customizable: Choose the technologies you want to showcase and customize the colors and icons to match your personal brand.
-Custom icons: You can even upload and use your own svg icons if they don't already exist.
-Multiple themes: These cards come with several pre-made themes that you can use. However, if none of the themes suits your style, you can easily create your own!
-Badges: github-readme-tech-stack uses shields.io badges and simple-icons under the hood.
-Style: github-readme-tech-stack is designed to match the style of github-readme-streak-stats, github-readme-stats and many other cool tools.
-🔧 Query parameters
-None of the fields are required. Each query parameter has a default value, which is listed below.
+   #database
+   DATABASE_URL=your_database_url
+   DATABASE_SECRET=your_database_secret
+   DRIZZLE_DATABASE_URL=your_database_url_for_drizzle
 
-What are the available query params?
-🪁 Themes
-These cards come with several built-in themes that you can use. You can find them all by clicking here.
-You can also customize the themes. It's easier to do with the demo website.
+   #auth
+   AUTH_SECRET=any_random_secret
+   ```
 
-⚒️ Building from source
+4. **Run database migrations:**
 
-# Clone the project:
+   Ensure your database is running and then run:
 
-git clone https://github.com/0l1v3rr/github-readme-tech-stack.git
-cd github-readme-tech-stack
+   ```bash
+   npm run drizzle-kit migrate
+   ```
 
-# Install the dependencies:
+5. **Start the development server:**
 
-npm i
-npm run prepare
+   ```bash
+   npm run dev
+   ```
 
-# Running the application:
+## 📖 Usage
 
-npm run dev
+### ✔ Running the Website
 
-# Running the storybook:
+- **Development mode:** `npm run dev`, `yarn dev`, or `bun dev`.
+- **Production mode:** `npm run build && npm start`, `yarn build && yarn start`, or `bun run build && bun start`.
 
-npm run storybook
-🧑‍🤝‍🧑 Contributing
-All contributions are welcome.
-You can find a contributing guideline here.
-This project is released under the MIT License.
+> Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+### 📃 API Documentation
+
+The API documentation for this application is available at [http://localhost:3000/api/docs](http://localhost:3000/api/docs). It details all endpoints and their usage.
+
+## 🤝 Contributing
+
+We welcome contributions to this project. Please follow these steps to contribute:
+
+1. **Fork the repository.**
+2. **Create a new branch** (`git checkout -b feature/your-feature-name`).
+3. **Make your changes** and commit them (`git commit -m 'Add some feature'`).
+4. **Push to the branch** (`git push origin feature/your-feature-name`).
+5. **Open a pull request**.
+
+Please make sure to update tests as appropriate.
+
+## 🐛 Issues
+
+If you encounter any issues while using or setting up the project, please check the [Issues]() section to see if it has already been reported. If not, feel free to open a new issue detailing the problem.
+
+When reporting an issue, please include:
+
+- A clear and descriptive title.
+- A detailed description of the problem.
+- Steps to reproduce the issue.
+- Any relevant logs or screenshots.
+- The environment in which the issue occurs (OS, browser, Node.js version, etc.).
+
+## 📜 License
+
+Distributed under the MIT License. See [License](/LICENSE) for more information.
