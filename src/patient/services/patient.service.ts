@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreatePatientDto } from '../dto/create-patient.dto';
 import { UpdatePatientDto } from '../dto/update-patient.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -14,9 +14,16 @@ export class PatientService {
     private readonly emailNotificationStrategy: EmailNotificationStrategy,
   ) {}
   async create(createPatientDto: CreatePatientDto) {
-    const patient = await this.patientRepository.save(createPatientDto);
-    await this.emailNotificationStrategy.notify(createPatientDto.email);
-    return patient;
+    try {
+      const patient = await this.patientRepository.save(createPatientDto);
+
+      return patient;
+    } catch (error) {
+      throw new HttpException(
+        'Failed to create patient' + error.message,
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
   async findAll() {
