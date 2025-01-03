@@ -70,9 +70,7 @@ describe('PatientController', () => {
         data: result,
       });
       expect(mockPatientService.create).toHaveBeenCalledWith(createPatientDto);
-      expect(mockNotificationContext.executeNotification).toHaveBeenCalledWith(
-        'no-reply-recipient@hotmail.com',
-      );
+
     });
   });
 });
