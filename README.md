@@ -12,13 +12,13 @@
 
 ## 💡 Overview
 
-FixHub is a powerful and intuitive issue tracker built using Next.js and SQL, designed to streamline bug management and project tracking. With a focus on efficiency and user-friendliness, FixHub allows for seamless creation, viewing, updating, and deletion of issues. Key features include:
+An API for patient registration that collects the following information: name, email address, phone number, and a photo of the document. Key features include:
 
 ## ✨ Features
 
-- **🔐 User Authentication:** Secure login with personalized access levels.
-- **🌍 Issue Management:** Create, view, update, and delete issues; assign tasks to team members.
-- **🔍 Filtering & Sorting:** Advanced options to quickly find and prioritize tasks.
+- **💾 Storage:** MySQL Database.
+- **🌍 Containerization:** Docker.
+- **📬 Notification e-mail:** Send automatic email once registered with option to scale to other types of notification using Design Patterns.
 - **📄 Pagination & Analytics:** Navigate large lists and gain insights with charts and dashboards.
 - **🎯 Production Optimization:** Built for speed and reliability in production environments.
 - **🔧 Customization:** Tailor settings and configurations to your needs.
@@ -112,30 +112,11 @@ To get a local copy of this project up and running, follow these steps.
 
 The API documentation for this application is available at [http://localhost:3000/api/docs](http://localhost:3000/api/docs). It details all endpoints and their usage.
 
-## 🤝 Contributing
+## 🧪 Test Cases
 
-We welcome contributions to this project. Please follow these steps to contribute:
-
-1. **Fork the repository.**
-2. **Create a new branch** (`git checkout -b feature/your-feature-name`).
-3. **Make your changes** and commit them (`git commit -m 'Add some feature'`).
-4. **Push to the branch** (`git push origin feature/your-feature-name`).
-5. **Open a pull request**.
-
-Please make sure to update tests as appropriate.
-
-## 🐛 Issues
-
-If you encounter any issues while using or setting up the project, please check the [Issues]() section to see if it has already been reported. If not, feel free to open a new issue detailing the problem.
-
-When reporting an issue, please include:
-
-- A clear and descriptive title.
-- A detailed description of the problem.
-- Steps to reproduce the issue.
-- Any relevant logs or screenshots.
-- The environment in which the issue occurs (OS, browser, Node.js version, etc.).
-
-## 📜 License
-
-Distributed under the MIT License. See [License](/LICENSE) for more information.
+1. **Invalid Input.**
+   ![alt text](image.png)
+2. **Register patient successfully.**
+   ![alt text](image-1.png)
+3. **Register patient successfully and email confirmation sent.**
+   ![alt text](image-2.png)
