@@ -4,11 +4,21 @@ import { PatientService } from '../services/patient.service';
 import { CreatePatientDto } from '../dto/create-patient.dto';
 import { UpdatePatientDto } from '../dto/update-patient.dto';
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { PatientModule } from 'src/patient/modules/patient.module';
+import { PatientModule } from '../modules/patient.module';
+import { getRepositoryToken } from '@nestjs/typeorm';
+import { Patient } from '../entities/patient.entity';
 
 describe('PatientController', () => {
   let controller: PatientController;
   let service: PatientService;
+
+  const mockPatientRepository = {
+    save: jest.fn(),
+    find: jest.fn(),
+    findOneBy: jest.fn(),
+    update: jest.fn(),
+    delete: jest.fn(),
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -16,14 +26,8 @@ describe('PatientController', () => {
       controllers: [PatientController],
       providers: [
         {
-          provide: PatientService,
-          useValue: {
-            create: jest.fn(),
-            findAll: jest.fn(),
-            findOne: jest.fn(),
-            update: jest.fn(),
-            remove: jest.fn(),
-          },
+          provide: getRepositoryToken(Patient),
+          useValue: mockPatientRepository,
         },
       ],
     }).compile();
