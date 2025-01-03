@@ -25,6 +25,8 @@ An API for patient registration that collects the following information: name, e
 
 The API documentation for this application is available at [http://localhost:3000/api/docs](http://localhost:3000/api). It details all endpoints and their usage.
 
+![alt text](assets/swagger-post.png)
+
 ## 🧪 Test Cases
 
 1. **Invalid Input.**
