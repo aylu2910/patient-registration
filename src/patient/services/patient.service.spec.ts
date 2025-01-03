@@ -5,10 +5,15 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Patient } from '../entities/patient.entity';
 import { CreatePatientDto } from '../dto/create-patient.dto';
 import { UpdatePatientDto } from '../dto/update-patient.dto';
+import { EmailNotificationStrategy } from '../../notifications/strategy/impl/email-notification.strategy';
 
 describe('PatientService', () => {
   let service: PatientService;
   let repository: Repository<Patient>;
+
+  const mockEmailNotificationStrategy = {
+    notify: jest.fn(),
+  };
 
   const mockPatientRepository = {
     save: jest.fn(),
@@ -25,6 +30,10 @@ describe('PatientService', () => {
         {
           provide: getRepositoryToken(Patient),
           useValue: mockPatientRepository,
+        },
+        {
+          provide: EmailNotificationStrategy,
+          useValue: mockEmailNotificationStrategy,
         },
       ],
     }).compile();
