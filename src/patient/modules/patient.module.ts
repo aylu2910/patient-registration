@@ -3,8 +3,8 @@ import { PatientService } from '../services/patient.service';
 import { PatientController } from '../controllers/patient.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Patient } from '../entities/patient.entity';
-import { EmailNotificationStrategy } from 'src/notifications/strategy/impl/email-notification.strategy';
-import { MailerService } from 'src/mailer/mailer.service';
+import { EmailNotificationStrategy } from '../../notifications/strategy/impl/email-notification.strategy';
+import { MailerService } from '../../mailer/mailer.service';
 import { ConfigService } from '@nestjs/config';
 
 @Module({

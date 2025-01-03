@@ -4,7 +4,7 @@ import { UpdatePatientDto } from '../dto/update-patient.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Patient } from '../entities/patient.entity';
 import { Repository } from 'typeorm';
-import { EmailNotificationStrategy } from 'src/notifications/strategy/impl/email-notification.strategy';
+import { EmailNotificationStrategy } from '../../notifications/strategy/impl/email-notification.strategy';
 
 @Injectable()
 export class PatientService {
