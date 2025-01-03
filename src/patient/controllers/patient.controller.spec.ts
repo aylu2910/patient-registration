@@ -5,39 +5,66 @@ import { CreatePatientDto } from '../dto/create-patient.dto';
 import { UpdatePatientDto } from '../dto/update-patient.dto';
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { PatientModule } from '../modules/patient.module';
-import { getRepositoryToken } from '@nestjs/typeorm';
 import { Patient } from '../entities/patient.entity';
+import { NotificationContext } from '../../notifications/notification.context';
+import { EmailNotificationStrategy } from '../../notifications/strategy/impl/email-notification.strategy';
 
 describe('PatientController', () => {
   let controller: PatientController;
   let service: PatientService;
+  let notificationContext: NotificationContext;
 
-  const mockPatientRepository = {
-    save: jest.fn(),
-    find: jest.fn(),
-    findOneBy: jest.fn(),
+  const mockPatientResponse = {
+    message: 'Patient registered successfully',
+    data: {
+      name: 'John oa',
+      email: 'Avenida@sex234.com',
+      address: 'Avenida Siempre Viva 742',
+      phoneNumber: '+541166566143',
+      imageDocument: 'https://Avenida.com.ar',
+      id: 1,
+    },
+  };
+
+  const mockPatientService = {
+    create: jest.fn().mockResolvedValue(mockPatientResponse),
+    findAll: jest.fn(),
+    findOne: jest.fn(),
     update: jest.fn(),
-    delete: jest.fn(),
+    remove: jest.fn(),
+  };
+
+  const mockNotificationContext = {
+    executeNotification: jest.fn(),
   };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [PatientModule],
       controllers: [PatientController],
       providers: [
         {
-          provide: getRepositoryToken(Patient),
-          useValue: mockPatientRepository,
+          provide: PatientService,
+          useValue: mockPatientService,
         },
       ],
-    }).compile();
+    })
+      .overrideProvider(NotificationContext)
+      .useValue(mockNotificationContext)
+      .compile();
 
     controller = module.get<PatientController>(PatientController);
     service = module.get<PatientService>(PatientService);
+    notificationContext = new NotificationContext(
+      new EmailNotificationStrategy(),
+    );
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   it('should be defined', () => {
-    console.log("ejecutando test");
+    console.log('ejecutando test');
     expect(controller).toBeDefined();
   });
 });
