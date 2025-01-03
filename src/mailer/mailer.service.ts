@@ -6,12 +6,14 @@ import * as Mail from 'nodemailer/lib/mailer';
 
 @Injectable()
 export class MailerService {
-  constructor(private readonly configService: ConfigService) {}
+  constructor(private readonly configService: ConfigService) {
+    this.sendEmail = this.sendEmail.bind(this);
+  }
   mailTransport() {
     const transporter = nodemailer.createTransport({
       host: this.configService.get('MAIL_HOST'),
       port: this.configService.get('MAIL_PORT'),
-      secure: true,
+      secure: false,
       auth: {
         user: this.configService.get('MAIL_USER'),
         pass: this.configService.get('MAIL_PASSWORD'),
@@ -21,19 +23,22 @@ export class MailerService {
     return transporter;
   }
 
-  async sendEmail(emailDto: SendEmailDto) {
+  async sendEmail(recipient) {
     const transporter = this.mailTransport();
+    const emailDto: SendEmailDto = {
+      recipient: recipient,
+      subject: 'Welcome aboad! :)',
+      html: `<h1>Thank you so much for registering as our patient.</h1><p>This is just the start of the journey</p>`,
+    };
 
     const options: Mail.Options = {
       from: this.configService.get('DEFAULT_MAIL_FROM'),
       to: emailDto.recipient,
       subject: emailDto.subject,
-      html,
+      html: emailDto.html,
     };
     try {
-      const res = await transporter.sendMail(options);
-      console.log('Email sent: ' + res);
-      return res;
+      await transporter.sendMail(options);
     } catch (error) {
       console.log('Error sending email: ' + error);
     }

@@ -17,10 +17,14 @@ import { EmailNotificationStrategy } from '../../notifications/strategy/impl/ema
 
 @Controller('patients')
 export class PatientController {
-  emailStrategy = new EmailNotificationStrategy();
-  context = new NotificationContext(this.emailStrategy);
+  private readonly context: NotificationContext;
 
-  constructor(private readonly patientService: PatientService) {}
+  constructor(
+    private readonly patientService: PatientService,
+    private readonly emailNotificationStrategy: EmailNotificationStrategy,
+  ) {
+    this.context = new NotificationContext(this.emailNotificationStrategy);
+  }
 
   @Post()
   async create(@Body() createPatientDto: CreatePatientDto) {
@@ -30,7 +34,7 @@ export class PatientController {
       if (result) {
         // Execute the notification in the background without awaiting
         this.context
-          .executeNotification('ayluOre', 'testing email strategy')
+          .executeNotification(createPatientDto.email)
           .catch((error) => {
             console.error('Notification failed:', error.message);
           });
